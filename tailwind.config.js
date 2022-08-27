@@ -30,6 +30,9 @@ module.exports = {
         people: 'url(../assets/img/people.jpg)',
         politics: 'url(../assets/img/politics.jpg)',
         war: 'url(../assets/img/war.jpg)',
+      },
+      background: {
+        citation: 'linear-gradient(90deg, rgba(217,217,223,1) 0%, rgba(255,255,255,1) 100%);'
       }
     },
   },

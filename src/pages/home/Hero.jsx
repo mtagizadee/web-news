@@ -45,15 +45,15 @@ const image = {
 const Hero = () => {
     return (
         <div className='mt-6 overflow-hidden'>
-            <motion.div
+            <motion.h1
                 variants={text}
                 initial='hidden'
                 animate='animate'
-                className='text-[6vw] sm:text-[5vw] md:text-[4vw] xl:text-[3vw] font-black'
+                className='font-black'
             >
                 <p> News are everywhere, everyday, everyone... </p>
                 <p> Be in focus with life. Always in time </p>
-            </motion.div>
+            </motion.h1>
             <div className='relative'>
                 <motion.div whileInView={{ scale: 1.1 }} className='w-full h-[80vh] bg-cover bg-no-repeat bg-center bg-home'/>
                 <motion.div

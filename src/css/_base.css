@@ -1,0 +1,11 @@
+@tailwind base;
+
+@layer base {
+    h1 {
+        @apply text-[6vw] sm:text-[5vw] md:text-[4vw] xl:text-[3vw];
+    }
+
+    h2 {
+        @apply text-[5vw] sm:text-[4vw] md:text-[3vw] xl:text-[2vw];
+    }
+}
