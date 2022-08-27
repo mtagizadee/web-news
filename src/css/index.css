@@ -1,0 +1,6 @@
+@import url('./_components.css');
+@import url('./_animations.css');
+@import url('./_packages.css');
+
+@tailwind base;
+@tailwind utilities;
