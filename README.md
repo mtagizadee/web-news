@@ -1,6 +1,6 @@
 # TODOs
 
-- [ ] News
+- [ ] NewsCard
 - [ ] Auth
 - [ ] Comments
 
