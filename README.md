@@ -3,6 +3,7 @@
 - [ ] NewsCard
 - [ ] AllNews
 - [ ] News
+- [ ] Create auth slice in redux storage
 - [ ] Auth
 - [ ] Comments
 
