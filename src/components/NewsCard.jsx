@@ -1,6 +1,13 @@
-import React, {memo} from 'react';
+import React, {memo, useCallback} from 'react';
+import {useNavigate} from "react-router";
 
 const NewsCard = memo(({news}) => {
+    const navigate = useNavigate();
+
+    const onClick = useCallback(() => {
+        navigate(`/news/${news.id}`)
+    },[]);
+
     return (
         <div className='min-w-[200px] w-full max-w-[400px] bg-gray-300 rounded-2xl'>
             <div>
@@ -12,7 +19,7 @@ const NewsCard = memo(({news}) => {
             </div>
             <div  className='p-4'>
                 <p className='mb-3'> {news.part1.slice(0,300)}... </p>
-                <button className='bg-gray-400 bg-opacity-70 py-2 px-4 rounded text-gray-600'> Learn more </button>
+                <button onClick={onClick} className='bg-gray-400 bg-opacity-70 py-2 px-4 rounded text-gray-600'> Learn more </button>
             </div>
         </div>
     );

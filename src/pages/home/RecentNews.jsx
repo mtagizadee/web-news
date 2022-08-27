@@ -3,6 +3,7 @@ import Carousel from "react-multi-carousel";
 import NewsCard from "../../components/NewsCard";
 import Loader from "../../components/Loader";
 import {useGetAllNewsQuery} from "../../feature/news/newsApi";
+import helpers from "../../helpers";
 
 const responsive = {
     desktop: {
@@ -27,6 +28,8 @@ const RecentNews = () => {
     const { data, error, isLoading } = useGetAllNewsQuery();
     if (isLoading) return <Loader />
 
+    const len = data.length;
+
     return (
         <div className='mt-24 p-12 bg-gray-200'>
             <h1 className='home-title'> Recent news </h1>
@@ -38,8 +41,8 @@ const RecentNews = () => {
                 infinite={true}
                 swipeable={true}
             >
-                {data.map((news) => {
-                    return <NewsCard news={news}/>
+                {(helpers.getNumbersTill(len <= 4? len : 4)).map((num) => {
+                    return <NewsCard news={data[num]}/>
                 })}
             </Carousel>
         </div>
