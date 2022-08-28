@@ -1,6 +1,6 @@
 import React from 'react';
 import LayOut from "../../components/layout";
-import {useGetAllNewsQuery} from "../../feature/news/newsApi";
+import {useGetAllNewsQuery} from "../../feature/api/newsApi";
 import Loader from "../../components/Loader";
 import NewsCard from "../../components/NewsCard";
 

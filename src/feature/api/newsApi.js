@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-export const newsApi = createApi({
-    reducerPath: 'newsApi',
+export const api = createApi({
+    reducerPath: 'api',
     baseQuery: fetchBaseQuery({
         baseUrl: 'http://localhost:5000/'
     }),
@@ -11,8 +11,15 @@ export const newsApi = createApi({
         }),
         getNewsById: builder.query({
             query: (id) => `news/${id}`
+        }),
+        getImagesById: builder.query({
+            query: (id) => `images/${id}`
         })
     }),
 })
 
-export const { useGetAllNewsQuery, useGetNewsByIdQuery } = newsApi
+export const {
+    useGetAllNewsQuery,
+    useGetNewsByIdQuery,
+    useGetImagesByIdQuery
+} = api

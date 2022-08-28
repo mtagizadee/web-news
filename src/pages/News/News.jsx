@@ -1,15 +1,17 @@
 import React, {useEffect} from 'react';
 import LayOut from "../../components/layout";
 import {useNavigate, useParams} from "react-router";
-import {useGetNewsByIdQuery} from "../../feature/news/newsApi";
+import {useGetImagesByIdQuery, useGetNewsByIdQuery} from "../../feature/api/newsApi";
 import Loader from "../../components/Loader";
 import Image from "../../components/ui/Image";
 import Logo from "../../components/Logo";
+import {Navigate} from "react-router-dom";
+import useFetchNews from "../../hooks/useFetchNews";
 
 /*
-    news - {
+    api - {
         id: number
-        images: StreamableFile
+        images: Image[]
         part1: string
         part2: string
         title: string
@@ -32,10 +34,9 @@ const News = () => {
         }
     },[]);
 
-    const {data, error, isLoading} = useGetNewsByIdQuery(id);
-
+    const { news, image, isLoading } = useFetchNews(id);
     if (isLoading) return <Loader />
-    if (!data) navigate('/error');
+    if (!news) return <Navigate to='/error'/>
 
     return (
         <LayOut>
@@ -43,13 +44,15 @@ const News = () => {
                 <div>
                     <div>
                         <div>
-                            <h1> {data.title} </h1>
-                            <p className='bg-gray-300 text-gray-600 bg-opacity-40 p-2 font-bold w-[113px] rounded'> {fixDate(data.createdAt)}</p>
+                            <h1> {news.title} </h1>
+                            <p className='bg-gray-300 text-gray-600 bg-opacity-40 p-2 font-bold w-[113px] rounded'>
+                                {fixDate(news.createdAt)}
+                            </p>
                         </div>
                     </div>
-                    <NewsPart text={data.part1} hasImage={true}/>
+                    <NewsPart text={news.part1} hasImage={true}/>
                     <Citation />
-                    <NewsPart text={data.part2}/>
+                    <NewsPart text={news.part2}/>
                 </div>
             </div>
         </LayOut>
