@@ -7,6 +7,21 @@ const getNumbersTill = (limit) => {
     return numbers;
 }
 
+const convertToImage = (image) => {
+    return btoa(
+        new Uint8Array(image).reduce(
+            (data, byte) => data + String.fromCharCode(byte),
+            ''
+        )
+    );
+}
+
+const generateSRC = (image) => {
+    return `url(data:;base64,${image})`;
+}
+
 export default {
-    getNumbersTill
+    getNumbersTill,
+    convertToImage,
+    generateSRC
 }

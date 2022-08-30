@@ -13,10 +13,10 @@
 # Types
     news - {
         id: number
-        images: Image[]
+        image: { stream: Stream }
         part1: string
         part2: string
         title: string
         createdAt: DateTime
-        updatedAt: DateTime
+        comments: Comment[]
     }

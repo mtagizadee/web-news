@@ -4,6 +4,8 @@ import Home from "../pages/home/Home";
 import Error from "../pages/error/Error";
 import AllNews from "../pages/AllNews/AllNews";
 import News from "../pages/News/News";
+import Signup from "../pages/auth/signup";
+import Login from "../pages/auth/login";
 
 const App = () => {
     return (
@@ -12,6 +14,8 @@ const App = () => {
                 <Route path='/' element={<Home />}/>
                 <Route path='news' element={<AllNews />}/>
                 <Route path='news/:id' element={<News />}/>
+                <Route path='auth/login' element={<Login />}/>
+                <Route path='auth/signup' element={<Signup />}/>
                 <Route path='*' element={<Navigate to='/error'/>}/>
                 <Route path='/error' element={<Error />}/>
             </Routes>

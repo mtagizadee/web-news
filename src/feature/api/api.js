@@ -1,9 +1,11 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
+export const baseURL = 'http://localhost:5000/'
+
 export const api = createApi({
     reducerPath: 'api',
     baseQuery: fetchBaseQuery({
-        baseUrl: 'http://localhost:5000/'
+        baseUrl: baseURL
     }),
     endpoints: (builder) => ({
         getAllNews: builder.query({
@@ -12,8 +14,8 @@ export const api = createApi({
         getNewsById: builder.query({
             query: (id) => `news/${id}`
         }),
-        getImagesById: builder.query({
-            query: (id) => `images/${id}`
+        getUserById: builder.query({
+            query: (id) => `users/${id}`
         })
     }),
 })
@@ -21,5 +23,5 @@ export const api = createApi({
 export const {
     useGetAllNewsQuery,
     useGetNewsByIdQuery,
-    useGetImagesByIdQuery
+    useGetUserByIdQuery
 } = api

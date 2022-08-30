@@ -11,14 +11,13 @@ const Footer = () => {
                     <ul>
                         <li className='font-medium'> Quick links </li>
                         <li className='font-medium mt-2 mb-2'> <NavLink className='opacity-60' to='/'> Home </NavLink> </li>
-                        <li className='font-medium mb-2'> <NavLink className='opacity-60' to='posts'> Posts </NavLink> </li>
-                        <li className='font-medium mb-2'> <NavLink className='opacity-60' to='membership'> Become a member </NavLink> </li>
+                        <li className='font-medium mb-2'> <NavLink className='opacity-60' to='/news'> News </NavLink> </li>
                     </ul>
                 </div>
                 <div className='mt-6 2sm:mt-0'>
                     <ul>
                         <li className='font-medium'> Contacts </li>
-                        <li className='font-medium mt-2 mb-2 opacity-60'> info@roadmates.com </li>
+                        <li className='font-medium mt-2 mb-2 opacity-60'> info@inews.com </li>
                         <li className='font-medium opacity-60 mb-2'>  (555) 555-1234 </li>
                         <li className='font-medium opacity-60 mb-2'>  Random Address </li>
                     </ul>

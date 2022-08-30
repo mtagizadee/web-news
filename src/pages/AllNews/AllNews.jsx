@@ -1,6 +1,6 @@
 import React from 'react';
 import LayOut from "../../components/layout";
-import {useGetAllNewsQuery} from "../../feature/api/newsApi";
+import {useGetAllNewsQuery} from "../../feature/api/api";
 import Loader from "../../components/Loader";
 import NewsCard from "../../components/NewsCard";
 
@@ -17,7 +17,7 @@ const AllNews = () => {
             '>
                 {data.map((news) => {
                     return (
-                        <div className='flex justify-center'>
+                        <div key={news.id} className='flex justify-center'>
                             <NewsCard news={news}/>
                         </div>
                     )

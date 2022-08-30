@@ -8,4 +8,16 @@
     h2 {
         @apply text-[5vw] sm:text-[4vw] md:text-[3vw] xl:text-[2vw];
     }
+
+    form {
+        @apply flex-col border-2 border-primary rounded-xl p-6 min-w-[200px] w-full max-w-[400px];
+    }
+
+    input {
+        @apply border-2 border-primary rounded-xl mt-3 p-3 outline-none w-full;
+    }
+
+    form > p {
+        @apply mt-3;
+    }
 }

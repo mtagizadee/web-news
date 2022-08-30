@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import Carousel from "react-multi-carousel";
 import NewsCard from "../../components/NewsCard";
 import Loader from "../../components/Loader";
-import {useGetAllNewsQuery} from "../../feature/api/newsApi";
+import {useGetAllNewsQuery} from "../../feature/api/api";
 import helpers from "../../helpers";
 
 const responsive = {

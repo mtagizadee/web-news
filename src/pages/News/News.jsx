@@ -1,12 +1,12 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import LayOut from "../../components/layout";
 import {useNavigate, useParams} from "react-router";
-import {useGetImagesByIdQuery, useGetNewsByIdQuery} from "../../feature/api/newsApi";
+import {useGetImagesByIdQuery, useGetNewsByIdQuery} from "../../feature/api/api";
 import Loader from "../../components/Loader";
 import Image from "../../components/ui/Image";
 import Logo from "../../components/Logo";
 import {Navigate} from "react-router-dom";
-import useFetchNews from "../../hooks/useFetchNews";
+import helpers from "../../helpers";
 
 /*
     api - {
@@ -27,6 +27,7 @@ const fixDate = (targetDate) => {
 const News = () => {
     const {id} = useParams();
     const navigate = useNavigate();
+    const [news, setNews] = useState(null);
 
     useEffect(() => {
         if (isNaN(Number(id))) {
@@ -34,9 +35,9 @@ const News = () => {
         }
     },[]);
 
-    const { news, image, isLoading } = useFetchNews(id);
+    const {data, error, isLoading} = useGetNewsByIdQuery(id);
     if (isLoading) return <Loader />
-    if (!news) return <Navigate to='/error'/>
+    if (!data) return <Navigate to='/error'/>
 
     return (
         <LayOut>
@@ -44,15 +45,15 @@ const News = () => {
                 <div>
                     <div>
                         <div>
-                            <h1> {news.title} </h1>
-                            <p className='bg-gray-300 text-gray-600 bg-opacity-40 p-2 font-bold w-[113px] rounded'>
-                                {fixDate(news.createdAt)}
+                            <h1> {data.title} </h1>
+                            <p className='bg-gray-300 text-gray-600 bg-opacity-40 p-2 font-bold w-[116px] rounded'>
+                                {fixDate(data.createdAt)}
                             </p>
                         </div>
                     </div>
-                    <NewsPart text={news.part1} hasImage={true}/>
+                    <NewsPart text={data.part1} hasImage={true}/>
                     <Citation />
-                    <NewsPart text={news.part2}/>
+                    <NewsPart text={data.part2}/>
                 </div>
             </div>
         </LayOut>

@@ -20,4 +20,20 @@
     .citation-part {
         @apply w-1/2 h-[20vh];
     }
+
+    .full-screen {
+        @apply w-screen h-screen;
+    }
+
+    .center-content {
+        @apply flex items-center justify-center;
+    }
+
+    .auth-button {
+        @apply py-2 px-4 border-2 border-primary mt-3 rounded-xl;
+    }
+
+    .link {
+        @apply font-bold text-gray-600;
+    }
 }
