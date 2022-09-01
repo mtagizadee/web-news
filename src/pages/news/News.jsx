@@ -7,6 +7,7 @@ import Image from "../../components/ui/Image";
 import Logo from "../../components/Logo";
 import {Navigate} from "react-router-dom";
 import helpers from "../../helpers";
+import CommentsSection from "./CommentsSection";
 
 /*
     api - {
@@ -54,6 +55,7 @@ const News = () => {
                     <NewsPart text={data.part1} hasImage={true}/>
                     <Citation />
                     <NewsPart text={data.part2}/>
+                    <CommentsSection comments={data.comments} newsId={data.id} />
                 </div>
             </div>
         </LayOut>
@@ -62,8 +64,8 @@ const News = () => {
 
 export const NewsPart = ({text, hasImage, image}) => {
     return (
-        <div className='2lg:flex items-center'>
-            <p className={`${hasImage? 'max-w-[600px]' : 'max-w-[1050px]'} p-6`}> {text} </p>
+        <div className='2lg:flex items-center justify-center'>
+            <p className={`max-w-[600px] w-full p-6`}> {text} </p>
             {hasImage &&
                 <Image
                     image={image}

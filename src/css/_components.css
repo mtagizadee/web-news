@@ -36,4 +36,8 @@
     .link {
         @apply font-bold text-gray-600;
     }
+
+    .comments-text {
+        @apply font-bold text-gray-600 text-xl text-opacity-80;
+    }
 }

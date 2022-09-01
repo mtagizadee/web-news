@@ -20,8 +20,13 @@ const generateSRC = (image) => {
     return `url(data:;base64,${image})`;
 }
 
+const generateAuthHeaders = (token) => {
+    return { Authorization: `Bearer ${token}` }
+}
+
 export default {
     getNumbersTill,
     convertToImage,
-    generateSRC
+    generateSRC,
+    generateAuthHeaders
 }

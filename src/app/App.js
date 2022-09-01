@@ -3,7 +3,7 @@ import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
 import Home from "../pages/home/Home";
 import Error from "../pages/error/Error";
 import AllNews from "../pages/AllNews/AllNews";
-import News from "../pages/News/News";
+import News from "../pages/news/News";
 import Signup from "../pages/auth/signup";
 import Login from "../pages/auth/login";
 

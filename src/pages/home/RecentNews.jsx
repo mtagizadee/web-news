@@ -42,7 +42,7 @@ const RecentNews = () => {
                 swipeable={true}
             >
                 {(helpers.getNumbersTill(len <= 4? len : 4)).map((num) => {
-                    return <NewsCard news={data[num]}/>
+                    return <NewsCard key={num} news={data[num]}/>
                 })}
             </Carousel>
         </div>

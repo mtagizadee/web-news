@@ -20,4 +20,8 @@
     form > p {
         @apply mt-3;
     }
+
+    textarea {
+        @apply border-gray-200 border-2 resize-none outline-none p-3;
+    }
 }

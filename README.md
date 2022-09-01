@@ -8,6 +8,7 @@
 - [ ] Add images for NewsCard
 - [ ] Create auth slice in redux storage
 - [ ] Auth
+- [ ] Add to header profile depending on isAuth
 - [ ] Comments
 
 # Types
@@ -19,4 +20,10 @@
         title: string
         createdAt: DateTime
         comments: Comment[]
+    }
+    comment - {
+        id: number
+        content: string
+        authorId: number
+        author: User
     }
