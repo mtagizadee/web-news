@@ -1,15 +1,19 @@
-# TODOs
+# Description
+    So called "web-news" is a project where a
+    user can read what is considered all up-to-date
+    news and leave a comment if they want what makes 
+    it not only a news website but also a forum, where
+    someone can share their opinion about some news.
 
-- [ ] NewsCard without images
-- [ ] AllNews
-- [ ] News without images
-- [ ] Add api for images w/ RTK Query
-- [ ] Add images for News
-- [ ] Add images for NewsCard
-- [ ] Create auth slice in redux storage
-- [ ] Auth
-- [ ] Add to header profile depending on isAuth
-- [ ] Comments
+#Technologies used
+    1. Main framework --> ReactJS
+    2. Redux  + RTK Query
+    3. Framer motion + Tailwindcss
+
+#How to run the project
+    1. Clone the git repo
+    2. run npm install command
+    3. run npm start
 
 # Types
     news - {

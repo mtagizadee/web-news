@@ -8,6 +8,7 @@ import Logo from "../../components/Logo";
 import {Navigate} from "react-router-dom";
 import helpers from "../../helpers";
 import CommentsSection from "./CommentsSection";
+import {ImageService} from "../../services/image-service";
 
 /*
     api - {
@@ -29,10 +30,22 @@ const News = () => {
     const {id} = useParams();
     const navigate = useNavigate();
     const [news, setNews] = useState(null);
+    const [image, setImage] = useState(null);
+
+    const fetchImage = async () => {
+        try {
+            const response = await ImageService.findOne(id);
+            setImage(response.data);
+        } catch (error) {
+            alert(error);
+        }
+    }
 
     useEffect(() => {
         if (isNaN(Number(id))) {
             navigate('/error');
+        } else {
+            fetchImage().catch(console.error)
         }
     },[]);
 
@@ -52,7 +65,7 @@ const News = () => {
                             </p>
                         </div>
                     </div>
-                    <NewsPart text={data.part1} hasImage={true}/>
+                    <NewsPart text={data.part1} hasImage={image !== null} image={helpers.convertToImage(image)}/>
                     <Citation />
                     <NewsPart text={data.part2}/>
                     <CommentsSection comments={data.comments} newsId={data.id} />

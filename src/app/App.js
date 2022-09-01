@@ -2,7 +2,7 @@ import React from 'react';
 import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
 import Home from "../pages/home/Home";
 import Error from "../pages/error/Error";
-import AllNews from "../pages/AllNews/AllNews";
+import AllNews from "../pages/allNews/AllNews";
 import News from "../pages/news/News";
 import Signup from "../pages/auth/signup";
 import Login from "../pages/auth/login";

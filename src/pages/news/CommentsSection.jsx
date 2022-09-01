@@ -70,7 +70,7 @@ const CreateCommentForm = ({newsId}) => {
 
     return (
         <form className='bg-white' onSubmit={onSubmit}>
-            <textarea value={content} onChange={(e) => setContent(e.target.value)} cols="40" rows="5"/>
+            <textarea value={content} onChange={(e) => setContent(e.target.value)} rows="5"/>
             <button className='comments-text w-full mt-3'> Create </button>
         </form>
     )
